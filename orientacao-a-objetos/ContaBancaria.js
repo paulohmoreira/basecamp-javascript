@@ -61,6 +61,8 @@ class ContaUniversitaria extends ContaBancaria {
 	sacar(valor) {
 		if (valor > 500) {
 			return 'Operação negada.';
+		} else if (valor > this._saldo) {
+			return console.log('Saque negado; saldo insuficiente!');
 		}
 
 		this._saldo = this._saldo - valor;
